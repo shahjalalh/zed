@@ -1,5 +1,7 @@
 # Zed
 
+### User model
+
 ### Technical Features
 * Python 3.5.x
 * Django 2.1.x
