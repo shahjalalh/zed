@@ -7,6 +7,9 @@
 
 {% block content %}
 <div class="main-content">
+    {% if user.is_authenticated %}
+    <h1>{% trans "You are already Signed In!!!" %}</h1>
+    {% else %}
     <h1>{% trans "Sign In" %}</h1>
 
     {% get_providers as socialaccount_providers %}
@@ -42,8 +45,8 @@
         <a class="button secondaryAction" href="{% url 'account_reset_password' %}">{% trans "Forgot Password?" %}</a>
         <button class="primaryAction" type="submit">{% trans "Sign In" %}</button>
     </form>
+    {% endif %}
+
 </div>
-
-
 
 {% endblock %}
