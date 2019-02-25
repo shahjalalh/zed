@@ -1,16 +1,19 @@
 /** styles.css **/
 
-.main-content{
+/**
+.main-content {
     margin-top: 75px;
 }
 
 @media only screen and (max-width: 768px) {
-    .main-content{
+    .main-content {
         margin-top: 60px;
     }
-  }
+}
+
 @media only screen and (max-width: 991px) {
-    .main-content{
+    .main-content {
         margin-top: 60px;
     }
-  }
+}
+**/
