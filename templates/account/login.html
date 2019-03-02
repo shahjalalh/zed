@@ -3,13 +3,13 @@
 {% load i18n %}
 {% load account socialaccount %}
 
-{% block head_title %}{% trans "Sign In" %}{% endblock %}
+{% block head_title %}{% trans "Log In" %}{% endblock %}
 
 {% block content %}
 <div class="main-content">
     {% if user.is_authenticated %}
 
-    <h1>{% trans "You are already Signed In!!!" %}</h1>
+    <h1>{% trans "You are already Logged In!!!" %}</h1>
 
     {% else %}
 
@@ -65,7 +65,7 @@
                                                 -->
                                             </div>
                                         </div>
-                                        <button class="btn btn-primary btn-user btn-block" type="submit">Sign In</button>
+                                        <button class="btn btn-primary btn-user btn-block" type="submit">Login</button>
                                         <!--
                                         <a href="index.html" class="btn btn-primary btn-user btn-block">
                                             Login
@@ -104,9 +104,9 @@
     {% get_providers as socialaccount_providers %}
 
     {% if socialaccount_providers %}
-    <p>{% blocktrans with site.name as site_name %}Please sign in with one
+    <p>{% blocktrans with site.name as site_name %}Please log in with one
         of your existing third party accounts. Or, <a href="{{ signup_url }}">sign up</a>
-        for a {{ site_name }} account and sign in below:{% endblocktrans %}</p>
+        for a {{ site_name }} account and log in below:{% endblocktrans %}</p>
 
     <div class="socialaccount_ballot">
 
