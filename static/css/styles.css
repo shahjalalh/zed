@@ -30,6 +30,12 @@ form.user .btn-user {
     border-color: #fff;
 }
 
+.bg-register-image {
+    background: url("../img/bg-register-image.jpg");
+    background-position: center;
+    background-size: cover;
+}
+
 @media only screen and (max-width: 768px) {
     .main-content {
         margin-top: 60px;
