@@ -10,6 +10,9 @@ class User(AbstractUser):
     bio = models.TextField(_("Bio"), max_length=500, blank=True)
     location = models.CharField(_("Location"), max_length=30, blank=True)
     birth_date = models.DateField(_("Birth Date"), null=True, blank=True)
+    created_date = models.DateTimeField(auto_now_add=True)
+    
+    modified_date = models.DateTimeField(auto_now=True)
 
     def get_absolute_url(self):
         return reverse("users:detail", kwargs={"username": self.username})
