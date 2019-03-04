@@ -23,6 +23,19 @@
                             <div class="text-center">
                                 <h1 class="h4 text-gray-900 mb-4">Create an Account!</h1>
                             </div>
+                            <div>
+                                {{ request.session.name }}
+                                {% if form.errors %}
+                                {% for field in form.visible_fields %}
+                                <p class="label label-danger">
+                                    
+                                    {{ field.errors }}
+                                    {{ field.help_text }}
+                                </p>
+
+                                {% endfor %}
+                                {% endif %}
+                            </div>
                             <form class="signup user" id="signup_form" method="post" action="{% url 'account_signup' %}">
                                 {% csrf_token %}
                                 <!--
@@ -42,7 +55,7 @@
                                     <input type="text" class="form-control form-control-user" id="exampleLastName" placeholder="Last Name">
                                     -->
                                     <input type="text" name="username" class="form-control form-control-user"
-                                        placeholder="Username" maxlength="150" minlength="1" id="id_username" required=""
+                                        placeholder="Username" {% if user.username %} value="{{ user.username }}" {% endif %} maxlength="150" minlength="1" id="id_username" required=""
                                         autofocus="autofocus">
                                 </div>
                                 <div class="form-group">
@@ -82,8 +95,7 @@
                                     Register Account
                                 </a>
                                 -->
-                                <button type="submit" class="btn btn-primary btn-user btn-block">{% trans "Register
-                                    Account" %}</button>
+                                <button type="submit" class="btn btn-primary btn-user btn-block">{% trans "Register Account" %}</button>
                                 <hr>
                                 <a href="index.html" class="btn btn-google btn-user btn-block">
                                     <i class="fab fa-google fa-fw"></i> Register with Google
