@@ -24,7 +24,7 @@
                                 <h1 class="h4 text-gray-900 mb-4">Create an Account!</h1>
                             </div>
                             <div>
-                                {{ request.session.name }}
+                                
                                 {% if form.errors %}
                                 {% for field in form.visible_fields %}
                                 <p class="label label-danger">
@@ -55,7 +55,7 @@
                                     <input type="text" class="form-control form-control-user" id="exampleLastName" placeholder="Last Name">
                                     -->
                                     <input type="text" name="username" class="form-control form-control-user"
-                                        placeholder="Username" {% if user.username %} value="{{ user.username }}" {% endif %} maxlength="150" minlength="1" id="id_username" required=""
+                                        placeholder="Username" {% if form.username.value != None %}value="{{ form.username.value|stringformat:'s' }}"{% endif %} maxlength="150" minlength="1" id="id_username" required=""
                                         autofocus="autofocus">
                                 </div>
                                 <div class="form-group">
@@ -63,7 +63,7 @@
                                     <input type="email" class="form-control form-control-user" id="exampleInputEmail"
                                         placeholder="Email Address">
                                     -->
-                                    <input type="email" name="email" class="form-control form-control-user" placeholder="E-mail address"
+                                    <input type="email" name="email" class="form-control form-control-user" {% if form.email.value != None %}value="{{ form.email.value|stringformat:'s' }}"{% endif %} placeholder="E-mail address"
                                         id="id_email" required="">
                                 </div>
                                 <div class="form-group row">
