@@ -54,6 +54,7 @@ class CustomSignupForm(SignupForm):
 
 
 # Profile Edit Form
+"""
 class ProfileForm(forms.Form):
 
     first_name = forms.CharField(max_length=30, widget=forms.TextInput(attrs={'class': 'form-control form-control-user', 'placeholder': 'First Name'}))
@@ -66,3 +67,4 @@ class ProfileForm(forms.Form):
 
     class Meta:
         fields = {'first_name', 'last_name', 'email', 'portfolio_site', 'birth_date', 'location', 'bio'}
+"""
