@@ -3,6 +3,7 @@ from users.models import User
 from django.contrib.auth.forms import UserCreationForm
 from allauth.account.forms import LoginForm, SignupForm
 
+
 # login form
 class CustomLoginForm(LoginForm):
 
@@ -49,4 +50,19 @@ class CustomSignupForm(SignupForm):
     
     class Meta:
         model = User
-        fields = {'username', 'password1', 'password2', 'email'}
+        fields = {'username', 'email', 'password1', 'password2'}
+
+
+# Profile Edit Form
+class ProfileForm(forms.Form):
+
+    first_name = forms.TextInput()
+    last_name = forms.TextInput()
+    email = forms.EmailField()
+    portfolio_site = forms.URLField()
+    birth_date = forms.DateField()
+    location = forms.TextInput()
+    bio = forms.Textarea()
+
+    class Meta:
+        fields = {'first_name', 'last_name', 'email', 'portfolio_site', 'birth_date', 'location', 'bio'}
