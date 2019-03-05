@@ -157,3 +157,8 @@ MEDIA_ROOT = MEDIA_DIR
 
 LOGIN_REDIRECT_URL = '/'
 ACCOUNT_LOGOUT_REDIRECT_URL = '/'
+
+# django-allauth
+ACCOUNT_FORMS = {'login': 'users.forms.CustomLoginForm', 'signup': 'users.forms.CustomSignupForm'}
+
+

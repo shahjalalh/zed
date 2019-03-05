@@ -24,11 +24,11 @@
                                 <h1 class="h4 text-gray-900 mb-4">Create an Account!</h1>
                             </div>
                             <div>
-                                
+
                                 {% if form.errors %}
                                 {% for field in form.visible_fields %}
                                 <p class="label label-danger">
-                                    
+
                                     {{ field.errors }}
                                     {{ field.help_text }}
                                 </p>
@@ -54,17 +54,23 @@
                                     <!--
                                     <input type="text" class="form-control form-control-user" id="exampleLastName" placeholder="Last Name">
                                     -->
+                                    <!--
                                     <input type="text" name="username" class="form-control form-control-user"
                                         placeholder="Username" {% if form.username.value != None %}value="{{ form.username.value|stringformat:'s' }}"{% endif %} maxlength="150" minlength="1" id="id_username" required=""
                                         autofocus="autofocus">
+                                    -->
+                                    {{form.username}}
                                 </div>
                                 <div class="form-group">
                                     <!--
                                     <input type="email" class="form-control form-control-user" id="exampleInputEmail"
                                         placeholder="Email Address">
                                     -->
+                                    <!--
                                     <input type="email" name="email" class="form-control form-control-user" {% if form.email.value != None %}value="{{ form.email.value|stringformat:'s' }}"{% endif %} placeholder="E-mail address"
                                         id="id_email" required="">
+                                    -->
+                                    {{form.email}}
                                 </div>
                                 <div class="form-group row">
                                     <div class="col-sm-6 mb-3 mb-sm-0">
@@ -72,16 +78,22 @@
                                         <input type="password" class="form-control form-control-user" id="exampleInputPassword"
                                             placeholder="Password">
                                         -->
+                                        <!--
                                         <input type="password" name="password1" class="form-control form-control-user"
                                             placeholder="Password" id="id_password1" required="">
+                                        -->
+                                        {{form.password1}}
                                     </div>
                                     <div class="col-sm-6">
                                         <!--
                                         <input type="password" class="form-control form-control-user" id="exampleRepeatPassword"
                                             placeholder="Repeat Password">
                                         -->
+                                        <!--
                                         <input type="password" name="password2" class="form-control form-control-user"
                                             placeholder="Password (again)" id="id_password2" required="">
+                                        -->
+                                        {{form.password2}}
                                     </div>
                                 </div>
 

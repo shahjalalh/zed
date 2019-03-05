@@ -43,15 +43,21 @@
                                     <form class="user login" method="POST" action="{% url 'account_login' %}">
                                         {% csrf_token %}
                                         <div class="form-group">
+                                            {{form.login}}
+                                            <!--
                                             <input type="text" class="form-control form-control-user" name="login"
                                                 autofocus="autofocus" maxlength="150" required="" placeholder="Username"
                                                 id="id_login">
+                                            -->
                                             <!--<input type="email" class="form-control form-control-user" id="exampleInputEmail"
                                                 aria-describedby="emailHelp" placeholder="Enter Email Address...">-->
                                         </div>
                                         <div class="form-group">
+                                            {{form.password}}
+                                            <!--
                                             <input type="password" name="password" id="id_password" required=""
                                                 placeholder="Password" class="form-control form-control-user">
+                                            -->
                                             <!--
                                                 <input type="password" class="form-control form-control-user" id="exampleInputPassword"
                                                 placeholder="Password">
@@ -59,8 +65,10 @@
                                         </div>
                                         <div class="form-group">
                                             <div class="custom-control custom-checkbox small">
-
+                                                {{form.remember}}
+                                                <!--
                                                 <input type="checkbox" name="remember" id="id_remember" class="custom-control-input">
+                                                -->
                                                 <!--
                                                 <input type="checkbox" class="custom-control-input" id="customCheck">
                                                 -->
