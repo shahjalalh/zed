@@ -56,13 +56,13 @@ class CustomSignupForm(SignupForm):
 # Profile Edit Form
 class ProfileForm(forms.Form):
 
-    first_name = forms.TextInput()
-    last_name = forms.TextInput()
-    email = forms.EmailField()
-    portfolio_site = forms.URLField()
-    birth_date = forms.DateField()
-    location = forms.TextInput()
-    bio = forms.Textarea()
+    first_name = forms.CharField(max_length=30, widget=forms.TextInput(attrs={'class': 'form-control form-control-user', 'placeholder': 'First Name'}))
+    last_name = forms.CharField(max_length=30, widget=forms.TextInput(attrs={'class': 'form-control form-control-user', 'placeholder': 'First Name'}))
+    email = forms.EmailField(max_length=254, widget=forms.EmailInput(attrs={'class': 'form-control form-control-user'}))
+    portfolio_site = forms.URLField(widget=forms.URLField(attrs={'class': 'form-control form-control-user'}))
+    birth_date = forms.DateField(widget=forms.URLField(attrs={'class': 'form-control form-control-user'}))
+    location = forms.CharField(max_length=30, widget=forms.TextInput(attrs={'class': 'form-control form-control-user', 'placeholder': 'First Name'}))
+    bio = forms.CharField(max_length=2000, widget=forms.Textarea(attrs={'class': 'form-control form-control-user'}), help_text='Write here your message!')
 
     class Meta:
         fields = {'first_name', 'last_name', 'email', 'portfolio_site', 'birth_date', 'location', 'bio'}
