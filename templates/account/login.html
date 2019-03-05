@@ -13,10 +13,6 @@
 
     {% else %}
 
-    {% if form.errors %}
-    <p class="label label-danger">Your username and password didn't match. Please try again.</p>
-    {% endif %}
-
     <div class="container">
 
         <div class="col-xl-10 col-lg-12 col-md-9">
@@ -40,6 +36,13 @@
                                     <div class="text-center">
                                         <h1 class="h4 text-gray-900 mb-4">Welcome Back!</h1>
                                     </div>
+
+                                    {% if form.errors %}
+                                    <div class="login-error">
+                                        <span class="badge badge-danger">Your username or password didn't match. Please try again.</span>
+                                    </div>
+                                    {% endif %}
+
                                     <form class="user login" method="POST" action="{% url 'account_login' %}">
                                         {% csrf_token %}
                                         <div class="form-group">

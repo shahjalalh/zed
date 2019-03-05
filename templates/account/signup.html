@@ -24,16 +24,13 @@
                                 <h1 class="h4 text-gray-900 mb-4">Create an Account!</h1>
                             </div>
                             <div>
-
                                 {% if form.errors %}
-                                {% for field in form.visible_fields %}
-                                <p class="label label-danger">
-
-                                    {{ field.errors }}
-                                    {{ field.help_text }}
-                                </p>
-
-                                {% endfor %}
+                                    {% for field in form.visible_fields %}
+                            
+                                        {{ field.errors }}
+                                        {{ field.help_text }}
+                                    
+                                    {% endfor %}
                                 {% endif %}
                             </div>
                             <form class="signup user" id="signup_form" method="post" action="{% url 'account_signup' %}">
