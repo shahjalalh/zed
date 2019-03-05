@@ -161,4 +161,14 @@ ACCOUNT_LOGOUT_REDIRECT_URL = '/'
 # django-allauth
 ACCOUNT_FORMS = {'login': 'users.forms.CustomLoginForm', 'signup': 'users.forms.CustomSignupForm'}
 
+# Enable any one of the option (console or smtp)
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+# EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+# EMAIL_USE_TLS = True
+# EMAIL_HOST = 'smtp.gmail.com'
+# EMAIL_PORT = 587
+# EMAIL_HOST_USER = DEFAULT_FROM_EMAIL = 'gmail account'
+# EMAIL_HOST_PASSWORD = 'gmail password'
+
+
 
