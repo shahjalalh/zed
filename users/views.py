@@ -2,7 +2,9 @@ from django.shortcuts import render, get_object_or_404
 from django.views.generic.base import TemplateView
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.views.generic import DetailView
+from django.views.generic.edit import UpdateView
 from .models import User
+from .forms import UserDetailUpdateForm
 
 # Create your views here.
 
@@ -26,3 +28,6 @@ class UserDetailView(LoginRequiredMixin, DetailView):
             print("you are not the owner!!")
 
         
+class UserDetailUpdateView(LoginRequiredMixin, UpdateView):
+    model = User
+    form_class = UserDetailUpdateForm

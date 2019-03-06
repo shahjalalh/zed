@@ -54,17 +54,21 @@ class CustomSignupForm(SignupForm):
 
 
 # Profile Edit Form
-"""
-class ProfileForm(forms.Form):
+
+class UserDetailUpdateForm(forms.Form):
 
     first_name = forms.CharField(max_length=30, widget=forms.TextInput(attrs={'class': 'form-control form-control-user', 'placeholder': 'First Name'}))
     last_name = forms.CharField(max_length=30, widget=forms.TextInput(attrs={'class': 'form-control form-control-user', 'placeholder': 'First Name'}))
-    email = forms.EmailField(max_length=254, widget=forms.EmailInput(attrs={'class': 'form-control form-control-user'}))
-    portfolio_site = forms.URLField(widget=forms.URLField(attrs={'class': 'form-control form-control-user'}))
-    birth_date = forms.DateField(widget=forms.URLField(attrs={'class': 'form-control form-control-user'}))
+    
+    email = forms.CharField(max_length=254, widget=forms.EmailInput(attrs={'class': 'form-control form-control-user'}))
+    portfolio_site = forms.CharField(widget=forms.TextInput(attrs={'class': 'form-control form-control-user'}))
+    birth_date = forms.DateField(widget=forms.DateInput(attrs={'class': 'form-control form-control-user'}))
     location = forms.CharField(max_length=30, widget=forms.TextInput(attrs={'class': 'form-control form-control-user', 'placeholder': 'First Name'}))
-    bio = forms.CharField(max_length=2000, widget=forms.Textarea(attrs={'class': 'form-control form-control-user'}), help_text='Write here your message!')
+    bio = forms.CharField(max_length=200, widget=forms.Textarea(attrs={'class': 'form-control form-control-user'}), help_text='Write here your message!')
+    phone = forms.CharField(max_length=100, widget=forms.TextInput(attrs={'class': 'form-control form-control-user'}))
+    profession = forms.CharField(max_length=100, widget=forms.TextInput(attrs={'class': 'form-control form-control-user'}))
+    
 
     class Meta:
+        model = User
         fields = {'first_name', 'last_name', 'email', 'portfolio_site', 'birth_date', 'location', 'bio'}
-"""
