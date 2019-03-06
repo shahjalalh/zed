@@ -12,6 +12,8 @@ class User(AbstractUser):
     birth_date = models.DateField(_("Birth Date"), blank=True, null=True)
     lon = models.FloatField(_("Latitude"), blank=True, null=True)
     lat = models.FloatField(_("Longitude"), blank=True, null=True)
+    phone = models.CharField(_("Phone"), max_length=99, blank=True, null=True)
+    profession = models.CharField(_("Profession"), max_length=30, blank=True, null=True)
     created_date = models.DateTimeField(auto_now_add=True)
     modified_date = models.DateTimeField(auto_now=True)
 

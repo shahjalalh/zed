@@ -70,10 +70,11 @@ form.user .btn-user {
 }
 
 /** Profile page style - start **/
-
+/**
 body{
     background: -webkit-linear-gradient(left, #3931af, #00c6ff);
 }
+**/
 .emp-profile{
     padding: 3%;
     margin-top: 3%;
@@ -108,7 +109,7 @@ body{
     color: #333;
 }
 .profile-head h6{
-    color: #0062cc;
+    color: #000000;
 }
 .profile-edit-btn{
     border: none;
