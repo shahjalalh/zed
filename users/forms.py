@@ -10,7 +10,7 @@ class CustomLoginForm(LoginForm):
     def __init__(self, *args, **kwargs):
         super(CustomLoginForm, self).__init__(*args, **kwargs)
 
-        self.fields['login'].widget = forms.TextInput(attrs={'type': 'text', 'class': 'form-control form-control-user', 'placeholder': 'Username'})
+        self.fields['login'].widget = forms.TextInput(attrs={'type': 'text', 'class': 'form-control form-control-user', 'placeholder': 'Username', 'autofocus':''})
         self.fields['password'].widget = forms.PasswordInput(attrs={'class': 'form-control form-control-user', 'placeholder': 'Password'})
         self.fields['remember'].widget = forms.CheckboxInput(attrs={'class': 'custom-control-input'})
     
@@ -32,8 +32,8 @@ class CustomSignupForm(SignupForm):
     def __init__(self, *args, **kwargs):
         super(CustomSignupForm, self).__init__(*args, **kwargs)
 
-        self.fields['username'].widget = forms.TextInput(attrs={'type': 'text', 'class': 'form-control form-control-user', 'placeholder': 'Username'})
-        self.fields['email'].widget = forms.TextInput(attrs={'type': 'email', 'class': 'form-control form-control-user', 'placeholder': 'E-mail address'})
+        self.fields['username'].widget = forms.TextInput(attrs={'type': 'text', 'class': 'form-control form-control-user', 'placeholder': 'Username', 'autofocus':''})
+        self.fields['email'].widget = forms.TextInput(attrs={'type': 'email', 'class': 'form-control form-control-user', 'placeholder': 'E-mail address', 'required':''})
         self.fields['password1'].widget = forms.PasswordInput(attrs={'class': 'form-control form-control-user', 'placeholder': 'Password'})
         self.fields['password2'].widget = forms.PasswordInput(attrs={'class': 'form-control form-control-user', 'placeholder': 'Password (again)'})
 

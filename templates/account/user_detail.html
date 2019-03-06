@@ -28,7 +28,7 @@
                         <h6>
                             Web Developer and Designer
                         </h6>
-                        <p class="proile-rating">RANKINGS : <span>8/10</span></p>
+                        <p class="proile-rating">RATING : <span>8/10</span></p>
                         <ul class="nav nav-tabs" id="myTab" role="tablist">
                             <li class="nav-item">
                                 <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab"
@@ -48,6 +48,8 @@
             <div class="row">
                 <div class="col-md-4">
                     <div class="profile-work">
+                        &nbsp;
+                        <!--
                         <p>WORK LINK</p>
                         <a href="">Website Link</a><br />
                         <a href="">Bootsnipp Profile</a><br />
@@ -58,6 +60,7 @@
                         <a href="">WordPress</a><br />
                         <a href="">WooCommerce</a><br />
                         <a href="">PHP, .Net</a><br />
+                        -->
                     </div>
                 </div>
                 <div class="col-md-8">
@@ -148,7 +151,7 @@
                             <div class="row">
                                 <div class="col-md-12">
                                     <label>Your Bio</label><br />
-                                    <p>Your detail description</p>
+                                    <p>{{request.user.bio}}</p>
                                 </div>
                             </div>
                         </div>
