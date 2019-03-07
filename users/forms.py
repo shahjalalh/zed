@@ -55,7 +55,7 @@ class CustomSignupForm(SignupForm):
 
 # Profile Edit Form
 
-class UserDetailUpdateForm(forms.Form):
+class UserDetailUpdateForm(forms.ModelForm):
 
     first_name = forms.CharField(max_length=30, widget=forms.TextInput(attrs={'class': 'form-control form-control-user', 'placeholder': 'First Name'}))
     last_name = forms.CharField(max_length=30, widget=forms.TextInput(attrs={'class': 'form-control form-control-user', 'placeholder': 'First Name'}))

@@ -18,11 +18,11 @@ class UserDetailView(LoginRequiredMixin, DetailView):
 
     def get_object(self):
         
-        object = get_object_or_404(User, username=self.kwargs.get("username"))
+        user_obj = get_object_or_404(User, username=self.kwargs.get("username"))
 
         # only owner can view his page
-        if self.request.user.username == object.username:
-            return object
+        if self.request.user.username == user_obj.username:
+            return user_obj
         else:
             # redirect to 404 page
             print("you are not the owner!!")
@@ -31,3 +31,17 @@ class UserDetailView(LoginRequiredMixin, DetailView):
 class UserDetailUpdateView(LoginRequiredMixin, UpdateView):
     model = User
     form_class = UserDetailUpdateForm
+    slug_field = "username"
+    slug_url_kwarg = "username"
+    template_name = "account/user_detail_update.html"
+
+    def get_object(self):
+        # import pdb;pdb.set_trace()
+        user_obj = get_object_or_404(User, username=self.kwargs.get("username"))
+
+        # only owner can view his page
+        if self.request.user.username == user_obj.username:
+            return user_obj
+        else:
+            # redirect to 404 page
+            print("you are not the owner!!")
